@@ -8,13 +8,13 @@ public class HelloWorld {
   // so imagine this as your app.js or app.rb
   // needs a Main() method
   public static void Main() {
-    var person = new Person();
-    person.Name = "James";
-    person.Age = 31;
+    var person = new Person(31, "James");
+    // person.Name = "James";
+    // person.Age = 31;
     Console.WriteLine(person.BuildMessage()); // console.log.. or puts
 
-    var doctor = new Doctor();
-    doctor.Name = "The Doctor";
+    var doctor = new Doctor(60, "The Doctor");
+    //doctor.Name = "The Doctor";
     doctor.UpdateAge(62);
     Console.WriteLine(doctor.BuildMessage());
 
@@ -31,6 +31,14 @@ public class HelloWorld {
 }
 
 public class Person {
+  // constructor
+  public Person(int age, string name) {
+    this.Name = name;
+    this.Age = age;
+  }
+  public Person() {
+    // empty constructor with arguments
+  }
   public string BuildMessage() {
     string message = "Hello, friends. I am learning another language. My name is " + this.Name + " and I am " + this.Age + " years old.";
     return message;
